@@ -9,5 +9,16 @@
 import UIKit
 
 class pokeCell: UICollectionViewCell {
+    @IBOutlet weak var thumbImg: UIImageView!
+    @IBOutlet weak var NameLbl: UILabel!
+    
+    var pokemon: Pokemon!
+    
+    func confegureCell(poke: Pokemon) {
+        self.pokemon = poke
+        
+        NameLbl.text = self.pokemon.name.capitalizedString
+        thumbImg.image = UIImage(named: "\(self.pokemon.pokedexId)")
+    }
     
 }
